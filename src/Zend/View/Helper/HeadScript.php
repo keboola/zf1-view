@@ -418,7 +418,7 @@ class Zend_View_Helper_HeadScript extends Zend_View_Helper_Placeholder_Container
         $addScriptEscape = !(isset($item->attributes['noescape']) && filter_var($item->attributes['noescape'], FILTER_VALIDATE_BOOLEAN));
 
         $type = ($this->_autoEscape) ? $this->_escape($item->type) : $item->type;
-        $html = '<script type="' . $type . '"' . $attrString . '>';
+        $html = '<script crossorigin="anonymous" type="' . $type . '"' . $attrString . '>';
         if (!empty($item->source)) {
             $html .= PHP_EOL ;
 
