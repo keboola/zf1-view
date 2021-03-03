@@ -45,7 +45,7 @@ class Zend_View_Helper_PlaceholderTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->placeholder = new Zend_View_Helper_Placeholder();
     }
@@ -56,7 +56,7 @@ class Zend_View_Helper_PlaceholderTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->placeholder);
         Zend_Registry::getInstance()->offsetUnset(Zend_View_Helper_Placeholder_Registry::REGISTRY_KEY);

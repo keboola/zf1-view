@@ -59,7 +59,7 @@ class Zend_View_Helper_TranslateTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->clearRegistry();
         $this->helper = new Zend_View_Helper_Translate();
@@ -71,7 +71,7 @@ class Zend_View_Helper_TranslateTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->helper);
         $this->clearRegistry();
@@ -113,7 +113,7 @@ class Zend_View_Helper_TranslateTest extends PHPUnit\Framework\TestCase
         try {
             $helper = new Zend_View_Helper_Translate('something');
         } catch (Zend_View_Exception $e) {
-            $this->assertContains('must set an instance of Zend_Translate', $e->getMessage());
+            $this->assertStringContainsString('must set an instance of Zend_Translate', $e->getMessage());
         }
     }
 
@@ -122,7 +122,7 @@ class Zend_View_Helper_TranslateTest extends PHPUnit\Framework\TestCase
         try {
             $this->helper->setTranslator('something');
         } catch (Zend_View_Exception $e) {
-            $this->assertContains('must set an instance of Zend_Translate', $e->getMessage());
+            $this->assertStringContainsString('must set an instance of Zend_Translate', $e->getMessage());
         }
     }
 
@@ -131,7 +131,7 @@ class Zend_View_Helper_TranslateTest extends PHPUnit\Framework\TestCase
         try {
             $this->helper->getLocale();
         } catch (Zend_View_Exception $e) {
-            $this->assertContains('must set an instance of Zend_Translate', $e->getMessage());
+            $this->assertStringContainsString('must set an instance of Zend_Translate', $e->getMessage());
         }
     }
 
@@ -140,7 +140,7 @@ class Zend_View_Helper_TranslateTest extends PHPUnit\Framework\TestCase
         try {
             $this->helper->setLocale('de');
         } catch (Zend_View_Exception $e) {
-            $this->assertContains('must set an instance of Zend_Translate', $e->getMessage());
+            $this->assertStringContainsString('must set an instance of Zend_Translate', $e->getMessage());
         }
     }
 

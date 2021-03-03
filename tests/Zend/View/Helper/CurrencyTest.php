@@ -54,7 +54,7 @@ class Zend_View_Helper_CurrencyTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->clearRegistry();
         $this->_cache = Zend_Cache::factory(
@@ -74,7 +74,7 @@ class Zend_View_Helper_CurrencyTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->helper);
         $this->_cache->clean(Zend_Cache::CLEANING_MODE_ALL);
@@ -112,9 +112,9 @@ class Zend_View_Helper_CurrencyTest extends PHPUnit\Framework\TestCase
             $helper = new Zend_View_Helper_Currency('something');
         } catch (Exception $e) {
             if (substr($e->getMessage(), 0, 15) == 'No region found') {
-                $this->assertContains('within the locale', $e->getMessage());
+                $this->assertStringContainsString('within the locale', $e->getMessage());
             } else {
-                $this->assertContains('not found', $e->getMessage());
+                $this->assertStringContainsString('not found', $e->getMessage());
             }
         }
     }
@@ -125,9 +125,9 @@ class Zend_View_Helper_CurrencyTest extends PHPUnit\Framework\TestCase
             $this->helper->setCurrency('something');
         } catch (Exception $e) {
             if (substr($e->getMessage(), 0, 15) == 'No region found') {
-                $this->assertContains('within the locale', $e->getMessage());
+                $this->assertStringContainsString('within the locale', $e->getMessage());
             } else {
-                $this->assertContains('not found', $e->getMessage());
+                $this->assertStringContainsString('not found', $e->getMessage());
             }
         }
     }

@@ -40,7 +40,7 @@ class Zend_View_Helper_Placeholder_StandaloneContainerTest extends PHPUnit\Frame
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $regKey = Zend_View_Helper_Placeholder_Registry::REGISTRY_KEY;
         if (Zend_Registry::isRegistered($regKey)) {
@@ -57,7 +57,7 @@ class Zend_View_Helper_Placeholder_StandaloneContainerTest extends PHPUnit\Frame
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->helper);
     }
@@ -79,9 +79,9 @@ class Zend_View_Helper_Placeholder_StandaloneContainerTest extends PHPUnit\Frame
         $foo2->append('Bar');
 
         $test = $foo1->toString();
-        $this->assertContains('Foo', $test);
-        $this->assertContains(' - ', $test);
-        $this->assertContains('Bar', $test);
+        $this->assertStringContainsString('Foo', $test);
+        $this->assertStringContainsString(' - ', $test);
+        $this->assertStringContainsString('Bar', $test);
     }
 }
 

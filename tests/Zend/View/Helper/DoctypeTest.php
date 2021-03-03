@@ -50,7 +50,7 @@ class Zend_View_Helper_DoctypeTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $regKey = 'Zend_View_Helper_Doctype';
         if (Zend_Registry::isRegistered($regKey)) {
@@ -66,7 +66,7 @@ class Zend_View_Helper_DoctypeTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->helper);
     }
@@ -78,7 +78,7 @@ class Zend_View_Helper_DoctypeTest extends PHPUnit\Framework\TestCase
         $this->assertTrue($doctype instanceof ArrayObject);
         $this->assertTrue(isset($doctype['doctype']));
         $this->assertTrue(isset($doctype['doctypes']));
-        $this->assertInternalType('array', $doctype['doctypes']);
+        $this->assertIsArray($doctype['doctypes']);
     }
 
     public function testDoctypeMethodReturnsObjectInstance()

@@ -44,7 +44,7 @@ class Zend_View_Helper_FormTextareaTest extends PHPUnit\Framework\TestCase
      *
      * @access protected
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->view   = new Zend_View();
         $this->helper = new Zend_View_Helper_FormTextarea();

@@ -40,7 +40,7 @@ class Zend_View_Helper_FormSelectTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->view   = new Zend_View();
         $this->helper = new Zend_View_Helper_FormSelect();
@@ -53,7 +53,7 @@ class Zend_View_Helper_FormSelectTest extends PHPUnit\Framework\TestCase
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->helper, $this->view);
     }
@@ -88,15 +88,15 @@ class Zend_View_Helper_FormSelectTest extends PHPUnit\Framework\TestCase
     {
         $html = $this->helper->formSelect('foo');
         $this->assertRegExp('#<select[^>]+name="foo"#', $html);
-        $this->assertContains('</select>', $html);
-        $this->assertNotContains('<option', $html);
+        $this->assertStringContainsString('</select>', $html);
+        $this->assertStringNotContainsString('<option', $html);
     }
 
     public function testFormSelectWithOptionsCreatesPopulatedSelect()
     {
         $html = $this->helper->formSelect('foo', null, null, array('foo' => 'Foobar', 'baz' => 'Bazbat'));
         $this->assertRegExp('#<select[^>]+name="foo"#', $html);
-        $this->assertContains('</select>', $html);
+        $this->assertStringContainsString('</select>', $html);
         $this->assertRegExp('#<option[^>]+value="foo".*?>Foobar</option>#', $html);
         $this->assertRegExp('#<option[^>]+value="baz".*?>Bazbat</option>#', $html);
         $this->assertEquals(2, substr_count($html, '<option'));

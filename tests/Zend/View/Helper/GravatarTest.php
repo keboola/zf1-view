@@ -45,7 +45,7 @@ class Zend_View_Helper_GravatarTest extends PHPUnit\Framework\TestCase
     /**
      * Prepares the environment before running a test.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->_object = new Zend_View_Helper_Gravatar();
         $this->_view   = new Zend_View();
@@ -60,7 +60,7 @@ class Zend_View_Helper_GravatarTest extends PHPUnit\Framework\TestCase
     /**
      * Cleans up the environment after running a test.
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->_object, $this->_view);
     }
@@ -133,7 +133,7 @@ class Zend_View_Helper_GravatarTest extends PHPUnit\Framework\TestCase
         $imgSizesRight = array(1, 500, '600');
         foreach ($imgSizesRight as $value) {
             $this->_object->setImgSize($value);
-            $this->assertInternalType('int', $this->_object->getImgSize());
+            $this->assertIsInt($this->_object->getImgSize());
         }
     }
 
@@ -160,7 +160,7 @@ class Zend_View_Helper_GravatarTest extends PHPUnit\Framework\TestCase
         $values = array('true', 'false', 'text', $this->_view, 100, true, '', null, 0, false);
         foreach ($values as $value) {
             $this->_object->setSecure($value);
-            $this->assertInternalType('bool', $this->_object->getSecure());
+            $this->assertIsBool($this->_object->getSecure());
         }
     }
 

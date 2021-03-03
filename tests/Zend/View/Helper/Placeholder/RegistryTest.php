@@ -45,7 +45,7 @@ class Zend_View_Helper_Placeholder_RegistryTest extends PHPUnit\Framework\TestCa
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $registry = Zend_Registry::getInstance();
         if (isset($registry[Zend_View_Helper_Placeholder_Registry::REGISTRY_KEY])) {
@@ -60,7 +60,7 @@ class Zend_View_Helper_Placeholder_RegistryTest extends PHPUnit\Framework\TestCa
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->registry);
     }

@@ -32,7 +32,7 @@
  */
 class Zend_View_Helper_DeclareVarsTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $view = new Zend_View();
         $base = str_replace('/', DIRECTORY_SEPARATOR, '/../_templates');
@@ -41,7 +41,7 @@ class Zend_View_Helper_DeclareVarsTest extends PHPUnit\Framework\TestCase
         $this->view = $view;
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->view);
     }
