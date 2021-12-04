@@ -71,7 +71,7 @@ class Zend_View_Helper_FormCheckboxTest extends PHPUnit\Framework\TestCase
             'value'   => 'bar',
             'attribs' => array('disable' => true)
         ));
-        $this->assertRegExp('/<input[^>]*?(disabled="disabled")/', $html);
+        $this->assertMatchesRegularExpression('/<input[^>]*?(disabled="disabled")/', $html);
     }
 
     /**
@@ -94,7 +94,7 @@ class Zend_View_Helper_FormCheckboxTest extends PHPUnit\Framework\TestCase
             'value'   => 'bar',
             'attribs' => array('checked' => true)
         ));
-        $this->assertRegExp('/<input[^>]*?(checked="checked")/', $html);
+        $this->assertMatchesRegularExpression('/<input[^>]*?(checked="checked")/', $html);
         $count = substr_count($html, 'checked');
         $this->assertEquals(2, $count);
     }
@@ -108,19 +108,19 @@ class Zend_View_Helper_FormCheckboxTest extends PHPUnit\Framework\TestCase
             'name'  => 'foo[]',
             'value' => 'bar'
         ));
-        $this->assertRegExp('/<input[^>]*?(id="foo")/', $html);
+        $this->assertMatchesRegularExpression('/<input[^>]*?(id="foo")/', $html);
 
         $html = $this->helper->formCheckbox(array(
             'name'  => 'foo[bar]',
             'value' => 'bar'
         ));
-        $this->assertRegExp('/<input[^>]*?(id="foo-bar")/', $html);
+        $this->assertMatchesRegularExpression('/<input[^>]*?(id="foo-bar")/', $html);
 
         $html = $this->helper->formCheckbox(array(
             'name'  => 'foo[bar][baz]',
             'value' => 'bar'
         ));
-        $this->assertRegExp('/<input[^>]*?(id="foo-bar-baz")/', $html);
+        $this->assertMatchesRegularExpression('/<input[^>]*?(id="foo-bar-baz")/', $html);
     }
 
     /**
@@ -132,7 +132,7 @@ class Zend_View_Helper_FormCheckboxTest extends PHPUnit\Framework\TestCase
             'name'  => 'foo[]',
             'value' => 'bar'
         ));
-        $this->assertNotRegExp('/<input[^>]*?(type="hidden")/', $html);
+        $this->assertDoesNotMatchRegularExpression('/<input[^>]*?(type="hidden")/', $html);
     }
 
     /**

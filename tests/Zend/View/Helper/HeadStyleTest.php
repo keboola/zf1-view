@@ -214,7 +214,7 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit\Framework\TestCase
         $this->helper->setStyle('a {}', array(
         ));
         $value = $this->helper->toString();
-        $this->assertRegExp('#<style [^>]*?media="screen"#', $value, $value);
+        $this->assertMatchesRegularExpression('#<style [^>]*?media="screen"#', $value, $value);
     }
 
     /**

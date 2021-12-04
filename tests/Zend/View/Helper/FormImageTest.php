@@ -62,18 +62,18 @@ class Zend_View_Helper_FormImageTest extends PHPUnit\Framework\TestCase
     public function testFormImageRendersFormImageXhtml()
     {
         $button = $this->helper->formImage('foo', 'bar');
-        $this->assertRegExp('/<input[^>]*?src="bar"/', $button);
-        $this->assertRegExp('/<input[^>]*?name="foo"/', $button);
-        $this->assertRegExp('/<input[^>]*?type="image"/', $button);
+        $this->assertMatchesRegularExpression('/<input[^>]*?src="bar"/', $button);
+        $this->assertMatchesRegularExpression('/<input[^>]*?name="foo"/', $button);
+        $this->assertMatchesRegularExpression('/<input[^>]*?type="image"/', $button);
     }
 
     public function testDisablingFormImageRendersImageInputWithDisableAttribute()
     {
         $button = $this->helper->formImage('foo', 'bar', array('disable' => true));
-        $this->assertRegExp('/<input[^>]*?disabled="disabled"/', $button);
-        $this->assertRegExp('/<input[^>]*?src="bar"/', $button);
-        $this->assertRegExp('/<input[^>]*?name="foo"/', $button);
-        $this->assertRegExp('/<input[^>]*?type="image"/', $button);
+        $this->assertMatchesRegularExpression('/<input[^>]*?disabled="disabled"/', $button);
+        $this->assertMatchesRegularExpression('/<input[^>]*?src="bar"/', $button);
+        $this->assertMatchesRegularExpression('/<input[^>]*?name="foo"/', $button);
+        $this->assertMatchesRegularExpression('/<input[^>]*?type="image"/', $button);
     }
 
     /**

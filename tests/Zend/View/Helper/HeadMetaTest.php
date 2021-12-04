@@ -501,8 +501,8 @@ class Zend_View_Helper_HeadMetaTest extends PHPUnit\Framework\TestCase
     {
         $html = $this->helper->appendHttpEquiv('foo', 'bar', array('conditional' => 'lt IE 7'))->toString();
 
-        $this->assertRegExp("|^<!--\[if lt IE 7\]>|", $html);
-        $this->assertRegExp("|<!\[endif\]-->$|", $html);
+        $this->assertMatchesRegularExpression("|^<!--\[if lt IE 7\]>|", $html);
+        $this->assertMatchesRegularExpression("|<!\[endif\]-->$|", $html);
     }
 
     /**

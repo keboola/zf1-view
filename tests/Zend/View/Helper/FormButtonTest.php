@@ -60,9 +60,9 @@ class Zend_View_Helper_FormButtonTest extends PHPUnit\Framework\TestCase
     public function testFormButtonRendersButtonXhtml()
     {
         $button = $this->helper->formButton('foo', 'bar');
-        $this->assertRegExp('/<button[^>]*?value="bar"/', $button);
-        $this->assertRegExp('/<button[^>]*?name="foo"/', $button);
-        $this->assertRegExp('/<button[^>]*?id="foo"/', $button);
+        $this->assertMatchesRegularExpression('/<button[^>]*?value="bar"/', $button);
+        $this->assertMatchesRegularExpression('/<button[^>]*?name="foo"/', $button);
+        $this->assertMatchesRegularExpression('/<button[^>]*?id="foo"/', $button);
         $this->assertStringContainsString('</button>', $button);
     }
 
@@ -91,7 +91,7 @@ class Zend_View_Helper_FormButtonTest extends PHPUnit\Framework\TestCase
     public function testValueUsedForContentWhenNoContentProvided()
     {
         $button = $this->helper->formButton(array('name' => 'foo', 'value' => 'bar'));
-        $this->assertRegExp('#<button[^>]*?value="bar"[^>]*>bar</button>#', $button);
+        $this->assertMatchesRegularExpression('#<button[^>]*?value="bar"[^>]*>bar</button>#', $button);
     }
 
     public function testButtonTypeIsButtonByDefault()
