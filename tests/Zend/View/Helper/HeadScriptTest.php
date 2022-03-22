@@ -86,7 +86,7 @@ class Zend_View_Helper_HeadScriptTest extends PHPUnit\Framework\TestCase
     public function testHeadScriptReturnsObjectInstance()
     {
         $placeholder = $this->helper->headScript();
-        $this->assertTrue($placeholder instanceof Zend_View_Helper_HeadScript);
+        $this->assertInstanceOf(Zend_View_Helper_HeadScript::class, $placeholder);
     }
 
     public function testSetPrependAppendAndOffsetSetThrowExceptionsOnInvalidItems()

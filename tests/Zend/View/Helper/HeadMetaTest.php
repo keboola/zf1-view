@@ -96,7 +96,7 @@ class Zend_View_Helper_HeadMetaTest extends PHPUnit\Framework\TestCase
     public function testHeadMetaReturnsObjectInstance()
     {
         $placeholder = $this->helper->headMeta();
-        $this->assertTrue($placeholder instanceof Zend_View_Helper_HeadMeta);
+        $this->assertInstanceOf(Zend_View_Helper_HeadMeta::class, $placeholder);
     }
 
     public function testAppendPrependAndSetThrowExceptionsWhenNonMetaValueProvided()

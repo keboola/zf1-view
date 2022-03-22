@@ -75,7 +75,7 @@ class Zend_View_Helper_DoctypeTest extends PHPUnit\Framework\TestCase
     {
         $this->assertTrue(Zend_Registry::isRegistered('Zend_View_Helper_Doctype'));
         $doctype = Zend_Registry::get('Zend_View_Helper_Doctype');
-        $this->assertTrue($doctype instanceof ArrayObject);
+        $this->assertInstanceOf(ArrayObject::class, $doctype);
         $this->assertTrue(isset($doctype['doctype']));
         $this->assertTrue(isset($doctype['doctypes']));
         $this->assertIsArray($doctype['doctypes']);
@@ -84,7 +84,7 @@ class Zend_View_Helper_DoctypeTest extends PHPUnit\Framework\TestCase
     public function testDoctypeMethodReturnsObjectInstance()
     {
         $doctype = $this->helper->doctype();
-        $this->assertTrue($doctype instanceof Zend_View_Helper_Doctype);
+        $this->assertInstanceOf(Zend_View_Helper_Doctype::class, $doctype);
     }
 
     public function testPassingDoctypeSetsDoctype()

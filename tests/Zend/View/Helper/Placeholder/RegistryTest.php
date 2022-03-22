@@ -82,7 +82,7 @@ class Zend_View_Helper_Placeholder_RegistryTest extends PHPUnit\Framework\TestCa
     {
         $this->assertFalse($this->registry->containerExists('foo'));
         $container = $this->registry->createContainer('foo');
-        $this->assertTrue($container instanceof Zend_View_Helper_Placeholder_Container);
+        $this->assertInstanceOf(Zend_View_Helper_Placeholder_Container::class, $container);
     }
 
     /**
@@ -92,7 +92,7 @@ class Zend_View_Helper_Placeholder_RegistryTest extends PHPUnit\Framework\TestCa
     {
         $this->assertFalse($this->registry->containerExists('foo'));
         $container = $this->registry->getContainer('foo');
-        $this->assertTrue($container instanceof Zend_View_Helper_Placeholder_Container_Abstract);
+        $this->assertInstanceOf(Zend_View_Helper_Placeholder_Container_Abstract::class, $container);
         $this->assertTrue($this->registry->containerExists('foo'));
     }
 
@@ -160,13 +160,13 @@ class Zend_View_Helper_Placeholder_RegistryTest extends PHPUnit\Framework\TestCa
     {
         $this->registry->setContainerClass('Zend_View_Helper_Placeholder_RegistryTest_Container');
         $container = $this->registry->createContainer('foo');
-        $this->assertTrue($container instanceof Zend_View_Helper_Placeholder_RegistryTest_Container);
+        $this->assertInstanceOf(Zend_View_Helper_Placeholder_RegistryTest_Container::class, $container);
     }
 
     public function testGetRegistryReturnsRegistryInstance()
     {
         $registry = Zend_View_Helper_Placeholder_Registry::getRegistry();
-        $this->assertTrue($registry instanceof Zend_View_Helper_Placeholder_Registry);
+        $this->assertInstanceOf(Zend_View_Helper_Placeholder_Registry::class, $registry);
     }
 
     public function testGetRegistrySubsequentTimesReturnsSameInstance()

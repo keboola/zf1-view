@@ -153,7 +153,7 @@ class Zend_View_Helper_TranslateTest extends PHPUnit\Framework\TestCase
         $this->helper->setTranslator($trans);
         $this->assertEquals('eins', $this->helper->translate('one'));
         $new = $this->helper->setLocale('it');
-        $this->assertTrue($new instanceof Zend_View_Helper_Translate);
+        $this->assertInstanceOf(Zend_View_Helper_Translate::class, $new);
         $this->assertEquals('it', $new->getLocale());
         $this->assertEquals('uno', $this->helper->translate('one'));
     }

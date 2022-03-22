@@ -64,7 +64,7 @@ class Zend_View_Helper_CycleTest extends PHPUnit\Framework\TestCase
     public function testCycleMethodReturnsObjectInstance()
     {
         $cycle = $this->helper->cycle();
-        $this->assertTrue($cycle instanceof Zend_View_Helper_Cycle);
+        $this->assertInstanceOf(Zend_View_Helper_Cycle::class, $cycle);
     }
 
     public function testAssignAndGetValues()

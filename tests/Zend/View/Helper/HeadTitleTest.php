@@ -86,7 +86,7 @@ class Zend_View_Helper_HeadTitleTest extends PHPUnit\Framework\TestCase
     public function testHeadTitleReturnsObjectInstance()
     {
         $placeholder = $this->helper->headTitle();
-        $this->assertTrue($placeholder instanceof Zend_View_Helper_HeadTitle);
+        $this->assertInstanceOf(Zend_View_Helper_HeadTitle::class, $placeholder);
     }
 
     public function testCanSetTitleViaHeadTitle()

@@ -86,6 +86,6 @@ class Zend_View_Helper_InlineScriptTest extends PHPUnit\Framework\TestCase
     public function testInlineScriptReturnsObjectInstance()
     {
         $placeholder = $this->helper->inlineScript();
-        $this->assertTrue($placeholder instanceof Zend_View_Helper_InlineScript);
+        $this->assertInstanceOf(Zend_View_Helper_InlineScript::class, $placeholder);
     }
 }

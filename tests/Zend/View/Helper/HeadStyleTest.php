@@ -86,7 +86,7 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit\Framework\TestCase
     public function testHeadStyleReturnsObjectInstance()
     {
         $placeholder = $this->helper->headStyle();
-        $this->assertTrue($placeholder instanceof Zend_View_Helper_HeadStyle);
+        $this->assertInstanceOf(Zend_View_Helper_HeadStyle::class, $placeholder);
     }
 
     public function testAppendPrependAndSetThrowExceptionsWhenNonStyleValueProvided()
@@ -127,7 +127,7 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit\Framework\TestCase
             $this->assertEquals($i + 1, count($values));
             $item = $values[$i];
 
-            $this->assertTrue($item instanceof stdClass);
+            $this->assertInstanceOf(stdClass::class, $item);
             $this->assertObjectHasAttribute('content', $item);
             $this->assertObjectHasAttribute('attributes', $item);
             $this->assertEquals($string, $item->content);
@@ -144,7 +144,7 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit\Framework\TestCase
             $this->assertEquals($i + 1, count($values));
             $item = array_shift($values);
 
-            $this->assertTrue($item instanceof stdClass);
+            $this->assertInstanceOf(stdClass::class, $item);
             $this->assertObjectHasAttribute('content', $item);
             $this->assertObjectHasAttribute('attributes', $item);
             $this->assertEquals($string, $item->content);
@@ -163,7 +163,7 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit\Framework\TestCase
         $this->assertCount(1, $values);
         $item = array_shift($values);
 
-        $this->assertTrue($item instanceof stdClass);
+        $this->assertInstanceOf(stdClass::class, $item);
         $this->assertObjectHasAttribute('content', $item);
         $this->assertObjectHasAttribute('attributes', $item);
         $this->assertEquals($string, $item->content);

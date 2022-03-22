@@ -89,7 +89,7 @@ class Zend_View_Helper_HeadLinkTest extends PHPUnit\Framework\TestCase
     public function testHeadLinkReturnsObjectInstance()
     {
         $placeholder = $this->helper->headLink();
-        $this->assertTrue($placeholder instanceof Zend_View_Helper_HeadLink);
+        $this->assertInstanceOf(Zend_View_Helper_HeadLink::class, $placeholder);
     }
 
     public function testPrependThrowsExceptionWithoutArrayArgument()

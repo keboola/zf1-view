@@ -271,7 +271,7 @@ class Zend_ViewTest extends PHPUnit\Framework\TestCase
         $view->addHelperPath(dirname(__FILE__) . '/View/_stubs/HelperDir1', 'Zend_View_Helper');
 
         $helper = $view->getHelper('Stub1');
-        $this->assertTrue($helper instanceof Foo_View_Helper_Stub1);
+        $this->assertInstanceOf(Foo_View_Helper_Stub1::class, $helper);
     }
 
     /**
@@ -398,7 +398,7 @@ class Zend_ViewTest extends PHPUnit\Framework\TestCase
     public function testInstanceOfInterface()
     {
         $view = new Zend_View();
-        $this->assertTrue($view instanceof Zend_View_Interface);
+        $this->assertInstanceOf(Zend_View_Interface::class, $view);
     }
 
     public function testGetVars()
@@ -454,7 +454,7 @@ class Zend_ViewTest extends PHPUnit\Framework\TestCase
             $this->fail('Setters should not throw exceptions');
         }
 
-        $this->assertTrue($test instanceof Zend_View);
+        $this->assertInstanceOf(Zend_View::class, $test);
     }
 
     public function testSetConfigInConstructor()
@@ -660,7 +660,7 @@ class Zend_ViewTest extends PHPUnit\Framework\TestCase
         $this->assertCount(1, $helpers);
         $this->assertTrue(isset($helpers['Stub2']));
         $stub2 = $helpers['Stub2'];
-        $this->assertTrue($stub2 instanceof Zend_View_Helper_Stub2);
+        $this->assertInstanceOf(Zend_View_Helper_Stub2::class, $stub2);
         $this->assertTrue(isset($stub2->view));
         $this->assertSame($view, $stub2->view);
     }
@@ -813,7 +813,7 @@ class Zend_ViewTest extends PHPUnit\Framework\TestCase
         $view = new Zend_View();
         $view->declareVars();
         $helper = $view->getHelper('declareVars');
-        $this->assertTrue($helper instanceof Zend_View_Helper_DeclareVars);
+        $this->assertInstanceOf(Zend_View_Helper_DeclareVars::class, $helper);
     }
 
     public function testGetHelperPath()
@@ -837,7 +837,7 @@ class Zend_ViewTest extends PHPUnit\Framework\TestCase
         $view->addFilterPath($base . '_stubs' . DIRECTORY_SEPARATOR . 'FilterDir1');
 
         $filter = $view->getFilter('foo');
-        $this->assertTrue($filter instanceof Zend_View_Filter_Foo);
+        $this->assertInstanceOf(Zend_View_Filter_Foo::class, $filter);
     }
 
     public function testGetFilterPath()

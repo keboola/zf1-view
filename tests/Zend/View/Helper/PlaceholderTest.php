@@ -99,7 +99,7 @@ class Zend_View_Helper_PlaceholderTest extends PHPUnit\Framework\TestCase
     public function testPlaceholderRetrievesContainer()
     {
         $container = $this->placeholder->placeholder('foo');
-        $this->assertTrue($container instanceof Zend_View_Helper_Placeholder_Container_Abstract);
+        $this->assertInstanceOf(Zend_View_Helper_Placeholder_Container_Abstract::class, $container);
     }
 
     /**
