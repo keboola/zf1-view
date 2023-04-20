@@ -44,6 +44,8 @@ class Zend_View_Helper_HeadLinkTest extends PHPUnit\Framework\TestCase
      */
     public $basePath;
 
+    protected $view;
+
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.

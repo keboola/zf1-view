@@ -8,10 +8,9 @@
     ],
     "homepage": "http://framework.zend.com/",
     "license": "BSD-3-Clause",
-    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.4 || ~8.0.0 || ~8.1.0",
+        "php": "^7.4 || ~8.0.0 || ~8.1.0 || ~8.2.0",
         "diablomedia/zendframework1-currency": "^1.0.0",
         "diablomedia/zendframework1-exception": "^1.0.0",
         "diablomedia/zendframework1-filter": "^1.0.0",
@@ -40,8 +39,8 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "^9.5.10",
-        "phpstan/phpstan": "1.7.14",
-        "friendsofphp/php-cs-fixer": "3.8.0",
+        "phpstan/phpstan": "1.10.13",
+        "friendsofphp/php-cs-fixer": "3.16.0",
         "maglnet/composer-require-checker": "^3.0.0",
         "phpro/grumphp-shim": "^1.5.0"
     },
@@ -65,5 +64,10 @@
         "diablomedia/zendframework1-view-helper-url": "For the Url View Helper",
         "diablomedia/zendframework1-view-helper-baseurl": "For the BaseUrl View Helper",
         "ext-filter": "Used in the HeadScript View Helper"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp-shim": true
+        }
     }
 }

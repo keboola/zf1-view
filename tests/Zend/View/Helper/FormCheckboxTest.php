@@ -36,6 +36,9 @@
  */
 class Zend_View_Helper_FormCheckboxTest extends PHPUnit\Framework\TestCase
 {
+    protected $view;
+    protected $helper;
+
     public function setUp(): void
     {
         if (Zend_Registry::isRegistered('Zend_View_Helper_Doctype')) {

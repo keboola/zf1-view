@@ -35,6 +35,9 @@
  */
 class Zend_View_Helper_FormLabelTest extends PHPUnit\Framework\TestCase
 {
+    protected $view;
+    protected $helper;
+
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.

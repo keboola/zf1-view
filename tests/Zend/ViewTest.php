@@ -31,6 +31,11 @@
  */
 class Zend_ViewTest extends PHPUnit\Framework\TestCase
 {
+    protected $notices;
+    protected $errorReporting;
+    protected $displayErrors;
+    protected $view;
+
     public function setUp(): void
     {
         $this->notices        = array();

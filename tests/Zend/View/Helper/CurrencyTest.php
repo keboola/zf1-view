@@ -39,6 +39,8 @@ class Zend_View_Helper_CurrencyTest extends PHPUnit\Framework\TestCase
      */
     public $helper;
 
+    protected $_cache;
+
     public function clearRegistry()
     {
         $regKey = 'Zend_Currency';

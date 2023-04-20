@@ -19,7 +19,6 @@
  * @version    $Id$
  */
 
-
 /**
  * Concrete class for handling view scripts.
  *
@@ -77,6 +76,7 @@
  * @method string url(array $urlOptions = array(), $name = null, $reset = false, $encode = true)
  * @method Zend_Http_UserAgent userAgent(Zend_Http_UserAgent $userAgent = null)
  */
+#[AllowDynamicProperties]
 class Zend_View extends Zend_View_Abstract
 {
     /**

@@ -36,6 +36,9 @@
  */
 class Zend_View_Helper_FormRadioTest extends PHPUnit\Framework\TestCase
 {
+    protected $view;
+    protected $helper;
+
     public function setUp(): void
     {
         $this->view = new Zend_View();
