@@ -261,16 +261,16 @@ class Zend_View_Helper_HeadScriptTest extends PHPUnit\Framework\TestCase
             $item = $items[$i];
             switch ($i) {
                 case 0:
-                    $this->assertObjectHasAttribute('source', $item);
+                    $this->assertObjectHasProperty('source', $item);
                     $this->assertEquals('bar', $item->source);
                     break;
                 case 1:
-                    $this->assertObjectHasAttribute('attributes', $item);
+                    $this->assertObjectHasProperty('attributes', $item);
                     $this->assertTrue(isset($item->attributes['src']));
                     $this->assertEquals('foo', $item->attributes['src']);
                     break;
                 case 2:
-                    $this->assertObjectHasAttribute('source', $item);
+                    $this->assertObjectHasProperty('source', $item);
                     $this->assertEquals('baz', $item->source);
                     break;
             }

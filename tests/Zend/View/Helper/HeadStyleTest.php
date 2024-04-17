@@ -128,8 +128,8 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit\Framework\TestCase
             $item = $values[$i];
 
             $this->assertInstanceOf(stdClass::class, $item);
-            $this->assertObjectHasAttribute('content', $item);
-            $this->assertObjectHasAttribute('attributes', $item);
+            $this->assertObjectHasProperty('content', $item);
+            $this->assertObjectHasProperty('attributes', $item);
             $this->assertEquals($string, $item->content);
         }
     }
@@ -145,8 +145,8 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit\Framework\TestCase
             $item = array_shift($values);
 
             $this->assertInstanceOf(stdClass::class, $item);
-            $this->assertObjectHasAttribute('content', $item);
-            $this->assertObjectHasAttribute('attributes', $item);
+            $this->assertObjectHasProperty('content', $item);
+            $this->assertObjectHasProperty('attributes', $item);
             $this->assertEquals($string, $item->content);
         }
     }
@@ -164,8 +164,8 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit\Framework\TestCase
         $item = array_shift($values);
 
         $this->assertInstanceOf(stdClass::class, $item);
-        $this->assertObjectHasAttribute('content', $item);
-        $this->assertObjectHasAttribute('attributes', $item);
+        $this->assertObjectHasProperty('content', $item);
+        $this->assertObjectHasProperty('attributes', $item);
         $this->assertEquals($string, $item->content);
     }
 
@@ -180,7 +180,7 @@ class Zend_View_Helper_HeadStyleTest extends PHPUnit\Framework\TestCase
         ));
         $value = $this->helper->getValue();
 
-        $this->assertObjectHasAttribute('attributes', $value);
+        $this->assertObjectHasProperty('attributes', $value);
         $attributes = $value->attributes;
 
         $this->assertTrue(isset($attributes['lang']));
