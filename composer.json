@@ -11,15 +11,15 @@
     "prefer-stable": true,
     "require": {
         "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0",
-        "diablomedia/zendframework1-currency": "^1.0.0",
-        "diablomedia/zendframework1-exception": "^1.0.0",
-        "diablomedia/zendframework1-filter": "^1.0.0",
-        "diablomedia/zendframework1-http": "^1.0.0",
-        "diablomedia/zendframework1-json": "^1.0.6",
-        "diablomedia/zendframework1-loader": "^1.0.0",
-        "diablomedia/zendframework1-locale": "^1.0.0",
-        "diablomedia/zendframework1-registry": "^1.0.2",
-        "diablomedia/zendframework1-translate": "^1.0.0"
+        "diablomedia/zendframework1-currency": "^1.0.4",
+        "diablomedia/zendframework1-exception": "^1.1.1",
+        "diablomedia/zendframework1-filter": "^1.0.6",
+        "diablomedia/zendframework1-http": "^1.0.5",
+        "diablomedia/zendframework1-json": "^1.0.7",
+        "diablomedia/zendframework1-loader": "^1.0.5",
+        "diablomedia/zendframework1-locale": "^1.0.6",
+        "diablomedia/zendframework1-registry": "^1.0.5",
+        "diablomedia/zendframework1-translate": "^1.0.5"
     },
     "autoload": {
         "psr-0": {
